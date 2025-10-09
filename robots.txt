@@ -1,0 +1,18 @@
+# Allow all search engines to index everything
+User-agent: *
+Allow: /
+
+# Block GitHub system files and folders
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /CNAME
+Disallow: /assets/*.psd
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Sitemap for better indexing
+Sitemap: https://YOUR-GITHUB-USERNAME.github.io/sitemap.xml
+
+# Last update
+# Generated on: 2025-10-09
