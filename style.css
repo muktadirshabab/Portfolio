@@ -742,7 +742,7 @@ p {
 
    /* --- News & STYLE --- */
  .neews-wrapper {
-   background: black;
+   background: transparent;
   overflow-x: auto;
   padding: 2rem 0rem;
   scroll-behavior: smooth;
@@ -752,7 +752,7 @@ p {
   display: flex;
   gap: 1rem;
   width: max-content;
-  background: #000;
+  background: transparent;
 }
 
 .news-card {
