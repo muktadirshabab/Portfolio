@@ -57,7 +57,7 @@ body {
       background: linear-gradient(to bottom, #fff 70%, #ffffff 30%);
       color: #111;
     }
- /* --- NAVBAR --- */
+/* ===== NAVBAR BASE ===== */
 .navbar {
   position: fixed;
   top: 0; left: 0;
@@ -70,16 +70,16 @@ body {
   justify-content: space-between;
   padding: 0 32px;
   font-family: 'Montserrat', sans-serif;
-  transition: background 0.4s, box-shadow 0.4s, color 0.4s;
+  transition: background 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
 }
 
-/* Logo SVG paths (all black by default) */
+/* ===== LOGO ===== */
 .navbar .nav-logo svg path {
   fill: #fff;
-  transition: fill 0.4s;
+  transition: fill 0.4s ease;
 }
 
-/* Center Menu */
+/* ===== CENTER MENU ===== */
 .navbar .nav-center {
   display: flex;
   gap: 36px;
@@ -87,15 +87,15 @@ body {
   justify-content: center;
 }
 
-/* Menu Items */
+/* ===== MENU ITEMS ===== */
 .navbar .nav-menu-item {
   position: relative;
   font-size: 1.8rem;
   font-weight: 400;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 .navbar .nav-menu-item::after {
   content: '';
@@ -103,26 +103,26 @@ body {
   position: absolute;
   left: 0; bottom: -4px;
   width: 100%; height: 2px;
-  background: #000;
+  background: #fff;
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
   border-radius: 1px;
 }
 .navbar .nav-menu-item:hover::after {
   transform: scaleX(1);
 }
 
-/* Right Section */
+/* ===== RIGHT SECTION ===== */
 .navbar .nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Hire Button */
+/* ===== HIRE BUTTON ===== */
 .navbar .hire-btn {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #111;
   border: none;
   padding: 10px 24px;
   font-size: 1.3rem;
@@ -130,10 +130,10 @@ body {
   border-radius: 4px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
-/* Hamburger */
+/* ===== HAMBURGER ===== */
 .navbar .hamburger {
   display: none;
   width: 34px; height: 44px;
@@ -145,9 +145,9 @@ body {
 .navbar .hamburger .apple-bar {
   display: block;
   height: 1px; width: 36px;
-  background: #000;
+  background: #fff;
   margin: 0; border-radius: 1px;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
   position: absolute; left: -20%; transform: translateX(-50%);
 }
 .navbar .hamburger .apple-bar1 { top: 15px; }
@@ -159,7 +159,7 @@ body {
   top: 19.5px; transform: translateX(-50%) rotate(-45deg); width: 26px;
 }
 
-/* Dropdown Background */
+/* ===== DROPDOWN BACKGROUND ===== */
 .nav-dropdown-bg {
   display: none;
   position: fixed;
@@ -168,17 +168,17 @@ body {
   height: 100vh;
   z-index: 199;
   background: #000;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease;
   backdrop-filter: blur(2px);
 }
 
-/* Dropdown Menu */
+/* ===== DROPDOWN MENU ===== */
 .nav-dropdown {
   position: fixed;
   top: 64px; right: 0;
   width: 100vw;
   height: calc(100vh - 64px);
-  background: #000;
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(18px);
   box-shadow: 0 2px 32px 2px rgba(255,255,255,0);
   z-index: 202;
@@ -189,14 +189,15 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-30px);
-  transition: opacity 0.7s cubic-bezier(.5,0,.2,1), transform 0.8s cubic-bezier(.5,0,.2,1);
+  transition: opacity 0.7s ease, transform 0.8s ease;
 }
 .nav-dropdown.open {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-  display: flex;
 }
+
+/* ===== DROPDOWN ITEMS ===== */
 .nav-dropdown .menu-items {
   display: flex;
   flex-direction: column;
@@ -213,7 +214,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   padding: 6px 0;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 .nav-dropdown .menu-item:hover { color: #ddd; }
 .nav-dropdown .menu-item::after {
@@ -226,12 +227,12 @@ body {
   height: 2px;
   background: #fff;
   transform: scaleX(0) translateX(-50%);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
   border-radius: 1px;
 }
 .nav-dropdown .menu-item:hover::after { transform: scaleX(1) translateX(-50%); }
 
-/* Dropdown bottom area */
+/* ===== DROPDOWN BOTTOM AREA ===== */
 .nav-dropdown .menu-bottom {
   margin-top: 54px;
   display: flex;
@@ -249,7 +250,7 @@ body {
   text-align: center;
   text-decoration: none;
   font-weight: 400;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 .nav-dropdown .contact-link:hover { text-decoration: underline; color: #eee; }
 .nav-dropdown .hire-btn {
@@ -260,7 +261,7 @@ body {
   border-radius: 4px;
   font-weight: 500;
   margin-top: 10px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
   box-shadow: none;
   outline: none;
   min-width: 120px;
@@ -273,22 +274,32 @@ body {
   border: 1px solid #fff;
   text-decoration: none;
 }
-.nav-dropdown .address { font-size: 0.98rem; margin-top: 12px; }
-
-.nav-dropdown {
-  position: fixed; top: 64px; right: 0;
-  width: 100vw; height: calc(100vh - 64px);
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(18px);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transform: translateY(-30px);
-  transition: opacity 0.7s, transform 0.8s;
+.nav-dropdown .address {
+  font-size: 0.98rem;
+  margin-top: 12px;
 }
-.nav-dropdown.open {
-  opacity: 1; pointer-events: auto;
-  transform: translateY(0);
+
+/* ===== SCROLLED STATE ===== */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.navbar.scrolled .nav-logo svg path {
+  fill: #fff;
+}
+.navbar.scrolled .nav-menu-item {
+  color: #fff;
+}
+.navbar.scrolled .hamburger .apple-bar {
+  background: #fff;
+}
+.navbar.scrolled .nav-menu-item::after {
+  background: #fff;
+}
+
+/* ===== MENU OPEN STATE (Mobile) ===== */
+.navbar.menu-open {
+  background: rgba(0, 0, 0, 0.95);
 }
 
 *{
