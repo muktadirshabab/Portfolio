@@ -84,9 +84,9 @@ body {
   transition: background 0.4s, box-shadow 0.4s, color 0.4s;
 }
 
-/* Logo SVG paths (all white by default) */
+/* Logo SVG paths (all black by default) */
 .navbar .nav-logo svg path {
-  fill: #fff;
+  fill: #000;
   transition: fill 0.4s;
 }
 
@@ -103,7 +103,7 @@ body {
   position: relative;
   font-size: 1.8rem;
   font-weight: 400;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   text-decoration: none;
   transition: color 0.3s;
@@ -114,7 +114,7 @@ body {
   position: absolute;
   left: 0; bottom: -4px;
   width: 100%; height: 2px;
-  background: #fff;
+  background: #000;
   transform: scaleX(0);
   transition: transform 0.3s;
   border-radius: 1px;
@@ -132,8 +132,8 @@ body {
 
 /* Hire Button */
 .navbar .hire-btn {
-  background: #fff;
-  color: #111;
+  background: #000;
+  color: #fff;
   border: none;
   padding: 10px 24px;
   font-size: 1.3rem;
@@ -156,7 +156,7 @@ body {
 .navbar .hamburger .apple-bar {
   display: block;
   height: 1px; width: 36px;
-  background: #fff;
+  background: #000;
   margin: 0; border-radius: 1px;
   transition: all 0.5s;
   position: absolute; left: -20%; transform: translateX(-50%);
@@ -170,7 +170,6 @@ body {
   top: 19.5px; transform: translateX(-50%) rotate(-45deg); width: 26px;
 }
 
-/* Dropdown */
 /* Dropdown Background */
 .nav-dropdown-bg {
   display: none;
@@ -179,7 +178,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 199;
-  background: #fff;
+  background: #000;
   transition: opacity 0.5s;
   backdrop-filter: blur(2px);
 }
@@ -190,9 +189,9 @@ body {
   top: 64px; right: 0;
   width: 100vw;
   height: calc(100vh - 64px);
-  background: #fff;
+  background: #000;
   backdrop-filter: blur(18px);
-  box-shadow: 0 2px 32px 2px rgba(0,0,0,0);
+  box-shadow: 0 2px 32px 2px rgba(255,255,255,0);
   z-index: 202;
   display: flex;
   flex-direction: column;
@@ -221,13 +220,13 @@ body {
   position: relative;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #111;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   padding: 6px 0;
   transition: color 0.2s;
 }
-.nav-dropdown .menu-item:hover { color: #222; }
+.nav-dropdown .menu-item:hover { color: #ddd; }
 .nav-dropdown .menu-item::after {
   content: '';
   display: block;
@@ -236,7 +235,7 @@ body {
   bottom: -4px;
   width: 80%;
   height: 2px;
-  background: #111;
+  background: #fff;
   transform: scaleX(0) translateX(-50%);
   transition: transform 0.3s;
   border-radius: 1px;
@@ -256,17 +255,17 @@ body {
 .nav-dropdown .address,
 .nav-dropdown .hire-btn {
   font-size: 1rem;
-  color: #222;
+  color: #fff;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   text-decoration: none;
   font-weight: 400;
   transition: color 0.2s;
 }
-.nav-dropdown .contact-link:hover { text-decoration: underline; color: #111; }
+.nav-dropdown .contact-link:hover { text-decoration: underline; color: #eee; }
 .nav-dropdown .hire-btn {
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: none;
   padding: 10px 28px;
   border-radius: 4px;
@@ -280,16 +279,17 @@ body {
   display: inline-block;
 }
 .nav-dropdown .hire-btn:hover {
-  background: #fff;
-  color: #111;
-  border: 1px solid #111;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
   text-decoration: none;
 }
 .nav-dropdown .address { font-size: 0.98rem; margin-top: 12px; }
+
 .nav-dropdown {
   position: fixed; top: 64px; right: 0;
   width: 100vw; height: calc(100vh - 64px);
-  background: rgba(255,255,255,0.85);
+  background: rgba(0,0,0,0.85);
   backdrop-filter: blur(18px);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
