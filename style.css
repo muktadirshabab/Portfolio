@@ -934,7 +934,7 @@ margin-bottom: 1rem;
 .news-wrapper {
       width: 100%;
       overflow: hidden;
-      background: #000;
+      background: #414455;
       padding: 12px 0;
       position: relative;
       white-space: nowrap;
@@ -964,7 +964,7 @@ margin-bottom: 1rem;
     }
 
     .news-item span.label {
-      background: #ff4b4b;
+      background: #fff;
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.8em;
