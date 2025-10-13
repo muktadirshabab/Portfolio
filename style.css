@@ -165,8 +165,7 @@ body {
   top: 64px; right: 0;
   width: 100vw;
   height: calc(100vh - 64px);
-  background: #000; /* default black dropdown */
-  backdrop-filter: blur(18px);
+  background: #757dbb;
   display: flex;
   flex-direction: column;
   align-items: center;
