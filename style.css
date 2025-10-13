@@ -60,7 +60,8 @@ body {
 /* ===== BASE NAVBAR ===== */
 .navbar {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 64px;
   background: transparent; /* primary transparent */
@@ -101,8 +102,10 @@ body {
   content: '';
   display: block;
   position: absolute;
-  left: 0; bottom: -4px;
-  width: 100%; height: 2px;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
   background: #fff;
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -136,36 +139,54 @@ body {
 /* ===== HAMBURGER ===== */
 .navbar .hamburger {
   display: none; /* show via media query */
-  width: 34px; height: 44px;
-  justify-content: center; align-items: center;
-  cursor: pointer; position: relative;
-  background: none; border: none;
-  outline: none; z-index: 201;
+  width: 34px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  z-index: 201;
 }
 .navbar .hamburger .apple-bar {
   display: block;
-  height: 1px; width: 36px;
+  height: 1px;
+  width: 36px;
   background: #fff; /* permanently white */
-  margin: 0; border-radius: 1px;
+  margin: 0;
+  border-radius: 1px;
   transition: all 0.5s ease;
-  position: absolute; left: -20%; transform: translateX(-50%);
+  position: absolute;
+  left: -20%;
+  transform: translateX(-50%);
 }
-.navbar .hamburger .apple-bar1 { top: 15px; }
-.navbar .hamburger .apple-bar2 { top: 24px; }
+.navbar .hamburger .apple-bar1 {
+  top: 15px;
+}
+.navbar .hamburger .apple-bar2 {
+  top: 24px;
+}
 .navbar .hamburger.active .apple-bar1 {
-  top: 19.5px; transform: translateX(-50%) rotate(45deg); width: 26px;
+  top: 19.5px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 26px;
 }
 .navbar .hamburger.active .apple-bar2 {
-  top: 19.5px; transform: translateX(-50%) rotate(-45deg); width: 26px;
+  top: 19.5px;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 26px;
 }
 
 /* ===== DROPDOWN MENU ===== */
 .nav-dropdown {
   position: fixed;
-  top: 64px; right: 0;
+  top: 64px;
+  right: 0;
   width: 100vw;
   height: calc(100vh - 64px);
-  background: #757dbb; /* solid dropdown background */
+  background: #757dbb; /* solid color always */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,13 +216,15 @@ body {
   position: relative;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #fff; /* always white */
+  color: #fff; /* permanently white */
   text-decoration: none;
   cursor: pointer;
   padding: 6px 0;
   transition: color 0.2s ease;
 }
-.nav-dropdown .menu-item:hover { color: #eee; }
+.nav-dropdown .menu-item:hover {
+  color: #fff; /* remain white */
+}
 .nav-dropdown .menu-item::after {
   content: '';
   display: block;
@@ -215,7 +238,9 @@ body {
   transition: transform 0.3s ease;
   border-radius: 1px;
 }
-.nav-dropdown .menu-item:hover::after { transform: scaleX(1) translateX(-50%); }
+.nav-dropdown .menu-item:hover::after {
+  transform: scaleX(1) translateX(-50%);
+}
 
 /* ===== DROPDOWN BOTTOM AREA ===== */
 .nav-dropdown .menu-bottom {
@@ -230,14 +255,17 @@ body {
 .nav-dropdown .address,
 .nav-dropdown .hire-btn {
   font-size: 1rem;
-  color: #fff; /* always white */
+  color: #fff; /* permanently white */
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   text-decoration: none;
   font-weight: 400;
   transition: color 0.2s ease;
 }
-.nav-dropdown .contact-link:hover { text-decoration: underline; color: #eee; }
+.nav-dropdown .contact-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
 .nav-dropdown .hire-btn {
   background: #fff;
   color: #000;
@@ -281,12 +309,11 @@ body {
 
 /* ===== MENU OPEN STATES ===== */
 .navbar.menu-open:not(.scrolled) {
-  background: #757dbb; /* menu open top page */
+  background: #757dbb; /* menu open on top page */
 }
 .navbar.menu-open.scrolled {
   background: #757dbb; /* menu open after scroll */
 }
-
 *{
 margin: 0;
 padding: 0;
