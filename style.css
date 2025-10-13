@@ -314,6 +314,9 @@ body {
 .navbar.menu-open.scrolled {
   background: #757dbb; /* menu open after scroll */
 }
+
+
+
 *{
 margin: 0;
 padding: 0;
