@@ -63,7 +63,7 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 64px;
-  background: transparent; /* Primary transparent */
+  background: transparent; /* primary transparent */
   z-index: 200;
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@ body {
 
 /* ===== LOGO ===== */
 .navbar .nav-logo svg path {
-  fill: #fff; /* Logo always white */
+  fill: #fff; /* always white */
   transition: fill 0.4s ease;
 }
 
@@ -139,13 +139,13 @@ body {
   width: 34px; height: 44px;
   justify-content: center; align-items: center;
   cursor: pointer; position: relative;
-  background: #fff; border: none;
+  background: none; border: none;
   outline: none; z-index: 201;
 }
 .navbar .hamburger .apple-bar {
   display: block;
   height: 1px; width: 36px;
-  background: #fff; /* always white */
+  background: #fff; /* permanently white */
   margin: 0; border-radius: 1px;
   transition: all 0.5s ease;
   position: absolute; left: -20%; transform: translateX(-50%);
@@ -165,7 +165,7 @@ body {
   top: 64px; right: 0;
   width: 100vw;
   height: calc(100vh - 64px);
-  background: #757dbb;
+  background: #757dbb; /* solid dropdown background */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +180,6 @@ body {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-  background: #757dbb; /* dropdown open color */
 }
 
 /* ===== DROPDOWN ITEMS ===== */
@@ -196,7 +195,7 @@ body {
   position: relative;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #fff;
+  color: #fff; /* always white */
   text-decoration: none;
   cursor: pointer;
   padding: 6px 0;
@@ -231,7 +230,7 @@ body {
 .nav-dropdown .address,
 .nav-dropdown .hire-btn {
   font-size: 1rem;
-  color: #fff;
+  color: #fff; /* always white */
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   text-decoration: none;
@@ -271,23 +270,21 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 .navbar.scrolled .nav-logo svg path {
-  fill: #fff; /* logo stays white */
+  fill: #fff; /* always white */
 }
 .navbar.scrolled .nav-menu-item {
-  color: #fff; /* menu stays white */
+  color: #fff; /* always white */
 }
 .navbar.scrolled .hamburger .apple-bar {
-  background: #fff; /* always white */
+  background: #fff; /* permanently white */
 }
 
 /* ===== MENU OPEN STATES ===== */
-/* Transparent mode menu open (top of page) */
 .navbar.menu-open:not(.scrolled) {
-  background: #757dbb; /* transparent → 757dbb on menu open */
+  background: #757dbb; /* menu open top page */
 }
-/* Scroll mode menu open */
 .navbar.menu-open.scrolled {
-  background: #757dbb; /* remain same color on scroll */
+  background: #757dbb; /* menu open after scroll */
 }
 
 *{
