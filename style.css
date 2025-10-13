@@ -451,7 +451,7 @@ margin-bottom: 1rem;
 }
 /* --- SCROLL STATE --- */
 .navbar.scrolled {
-  background: #000;
+  background: #757dbb;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 .navbar.scrolled .nav-logo svg path { fill: #111; }
@@ -461,13 +461,13 @@ margin-bottom: 1rem;
 
 /* --- DROPDOWN OPEN STATE --- */
 .navbar.menu-open {
-  background: #fff;
+  background: #757dbb;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-.navbar.menu-open .nav-logo svg path { fill: #111; }
-.navbar.menu-open .nav-menu-item { color: #111; }
-.navbar.menu-open .nav-menu-item::after { background: #111; }
-.navbar.menu-open .hamburger .apple-bar { background: #111; }
+.navbar.menu-open .nav-logo svg path { fill: #fff; }
+.navbar.menu-open .nav-menu-item { color: #fff; }
+.navbar.menu-open .nav-menu-item::after { background: #fff; }
+.navbar.menu-open .hamburger .apple-bar { background: #fff; }
 
 /* Responsive */
 @media (max-width: 899px) {
