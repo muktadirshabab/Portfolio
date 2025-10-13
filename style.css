@@ -139,7 +139,7 @@ body {
   width: 34px; height: 44px;
   justify-content: center; align-items: center;
   cursor: pointer; position: relative;
-  background: none; border: none;
+  background: #fff; border: none;
   outline: none; z-index: 201;
 }
 .navbar .hamburger .apple-bar {
