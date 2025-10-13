@@ -152,7 +152,7 @@ body {
 }
 .navbar .hamburger .apple-bar {
   display: block;
-  height: 1px;
+  height: 1.3px;
   width: 36px;
   background: #fff; /* permanently white */
   margin: 0;
