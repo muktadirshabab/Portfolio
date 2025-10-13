@@ -145,7 +145,7 @@ body {
 .navbar .hamburger .apple-bar {
   display: block;
   height: 1px; width: 36px;
-  background: #fff;
+  background: #757dbb;
   margin: 0; border-radius: 1px;
   transition: all 0.5s ease;
   position: absolute; left: -20%; transform: translateX(-50%);
@@ -454,10 +454,10 @@ margin-bottom: 1rem;
   background: #757dbb;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-.navbar.scrolled .nav-logo svg path { fill: #111; }
-.navbar.scrolled .nav-menu-item { color: #111; }
-.navbar.scrolled .nav-menu-item::after { background: #111; }
-.navbar.scrolled .hamburger .apple-bar { background: #111; }
+.navbar.scrolled .nav-logo svg path { fill: #fff; }
+.navbar.scrolled .nav-menu-item { color: #fff; }
+.navbar.scrolled .nav-menu-item::after { background: #fff; }
+.navbar.scrolled .hamburger .apple-bar { background: #fff; }
 
 /* --- DROPDOWN OPEN STATE --- */
 .navbar.menu-open {
