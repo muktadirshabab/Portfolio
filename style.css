@@ -57,17 +57,6 @@ body {
       background: linear-gradient(to bottom, #fff 70%, #ffffff 30%);
       color: #111;
     }
-.toolbar-preview {
-      width: 100vw;
-      height: 40px;
-      background: #E9DCC9;
-      color: #ff0000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
  /* --- NAVBAR --- */
 .navbar {
   position: fixed;
@@ -86,7 +75,7 @@ body {
 
 /* Logo SVG paths (all black by default) */
 .navbar .nav-logo svg path {
-  fill: #000;
+  fill: #fff;
   transition: fill 0.4s;
 }
 
