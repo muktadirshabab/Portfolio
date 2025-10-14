@@ -216,7 +216,7 @@ body {
 
 /* ===== CONTENT ===== */
 :root {
-  --profile-x: -20px; /* Change these freely in mobile to move position */
+  --profile-x: -10px; /* Change these freely in mobile to move position */
   --profile-y: 50px;
 }
 
@@ -232,7 +232,6 @@ body {
 
 /* Headings */
 .content h3 {
-  text-align: center;
   font-family: var(--font-h3);
   font-size: var(--fs-h3);
   letter-spacing: 2px;
@@ -251,8 +250,8 @@ body {
 
 /* Profile Box - Round Glassmorphism */
 .profile-box {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   overflow: hidden;
   margin: 20px auto;
@@ -286,7 +285,8 @@ body {
     position: relative;
   }
 
-  .content h1,{
+  .content h1,
+  .content p {
     text-align: right;
   margin-right: 1rem;
   }
@@ -333,7 +333,6 @@ body {
 
 /* ===== BUTTON ===== */
 .btn {
-  justify-content: center ;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 2px solid #fff;
@@ -356,7 +355,7 @@ body {
 }
 
 .social-icons a {
-  font-size: 34px;
+  font-size: 30px;
   color: #fff;
   margin: 0 10px;
   text-decoration: none;
@@ -365,6 +364,29 @@ body {
 
 .social-icons a:hover {
   color: #00aced;
+}
+
+/* ===== MOBILE VERSION ===== */
+@media (max-width: 768px) {
+  .hero {
+    justify-content: flex-start; /* align left horizontally */
+    padding-left: 1.5rem;
+  }
+
+  .content {
+    text-align: center; /* left-align text */
+    padding: 0;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center; /* left-aligned icons */
+  }
 }
 
 /* ===== MOBILE VERSION ===== */
