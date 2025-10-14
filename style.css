@@ -386,11 +386,13 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 /* ===== Footer ===== */
 .footer {
   z-index: 1;
-  --footer-background: #ED5565;
+  --footer-background: black;
   display: grid;
   position: relative;
   grid-area: footer;
   min-height: 12rem;
+  background: var(--footer-background);
+  color: #F5F7FA;
 }
 
 .footer .bubbles {
@@ -416,53 +418,50 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 .footer .content {
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   padding: 2rem;
   background: var(--footer-background);
 }
 
 .footer .content a,
-.footer .content p {
+.footer .content p,
+.footer .content b {
   color: #F5F7FA;
   text-decoration: none;
 }
 
 .footer .content b {
-  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.footer .content p {
-  margin: 0;
-  font-size: .75rem;
-}
-
-.footer .content > div {
+.footer-social {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
-.footer .content > div > div {
+.footer-social a {
+  color: #eee;
+  font-size: 1.6rem;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #1da1f2; /* hover color for all social icons */
+}
+
+.contact-info p {
   margin: 0.25rem 0;
+  font-size: 0.85rem;
 }
 
-.footer .content > div > div > * {
-  margin-right: .5rem;
-}
-
-.footer .content .image {
-  align-self: center;
-  width: 4rem;
-  height: 4rem;
-  margin: 0.25rem 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.footer .content .fab {
-  font-size: 1.2rem;
-  margin-right: .5rem;
+.footer-copy {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 10px;
 }
 
 @keyframes bubble-size {
