@@ -56,11 +56,8 @@ document.addEventListener('click', e => {
 
 
 const colors = [
-  // dark blue shades
   '#8A8EB6', '#3A3A46', '#8C90B5', '#354990',
-  // dark gray shades
   '#0F1038', '#8C90AA', '#9599BC', '#474958',
-  // dark purple shades
   '#1A1B51', '#454267', '#0D123A', '#222F97'
 ];
 
@@ -68,9 +65,13 @@ function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function updateBackgroundSmooth() {
-  const color = getRandomColor();
-  
+function shadeColor(color, percent) {
+  let f = parseInt(color.slice(1),16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent*-1 : percent;
+  let R = f>>16, G = f>>8&0x00FF, B = f&0x0000FF;
+  return "#" + (0x1000000 + (Math.round((t-R)*p/100)+R)*0x10000 + (Math.round((t-G)*p/100)+G)*0x100 + (Math.round((t-B)*p/100)+B)).toString(16).slice(1);
+}
+
+function updateBackgroundSmooth(color) {
   // Smooth transition for body
   document.body.style.transition = 'background-color 1.5s ease';
   document.body.style.backgroundColor = color;
@@ -87,20 +88,34 @@ function updateBackgroundSmooth() {
   // Update CSS root variables
   const root = document.documentElement;
   root.style.setProperty('--color-nav-solid', color);
-  // For dark variant, make it a bit darker
   const darkColor = shadeColor(color, -30);
   root.style.setProperty('--color-nav-dark', darkColor);
 }
 
-// Helper function to darken/lighten color
-function shadeColor(color, percent) {
-  let f = parseInt(color.slice(1),16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent*-1 : percent;
-  let R = f>>16, G = f>>8&0x00FF, B = f&0x0000FF;
-  return "#" + (0x1000000 + (Math.round((t-R)*p/100)+R)*0x10000 + (Math.round((t-G)*p/100)+G)*0x100 + (Math.round((t-B)*p/100)+B)).toString(16).slice(1);
+// Check last update from localStorage
+const lastUpdate = localStorage.getItem('bgColorLastUpdate');
+const savedColor = localStorage.getItem('bgColorValue');
+const now = Date.now();
+const twelveHours = 12 * 60 * 60 * 1000;
+
+if (!lastUpdate || now - lastUpdate > twelveHours) {
+  const newColor = getRandomColor();
+  updateBackgroundSmooth(newColor);
+  localStorage.setItem('bgColorLastUpdate', now);
+  localStorage.setItem('bgColorValue', newColor);
+} else {
+  updateBackgroundSmooth(savedColor);
+  // Set a timeout for remaining time to next 12-hour change
+  setTimeout(() => {
+    const nextColor = getRandomColor();
+    updateBackgroundSmooth(nextColor);
+    localStorage.setItem('bgColorLastUpdate', Date.now());
+    localStorage.setItem('bgColorValue', nextColor);
+    setInterval(() => {
+      const next = getRandomColor();
+      updateBackgroundSmooth(next);
+      localStorage.setItem('bgColorValue', next);
+      localStorage.setItem('bgColorLastUpdate', Date.now());
+    }, twelveHours);
+  }, twelveHours - (now - lastUpdate));
 }
-
-// Initial setup
-updateBackgroundSmooth();
-
-// Change color every 12 hours (12 hours = 12 * 60 * 60 * 1000 ms)
-setInterval(updateBackgroundSmooth, 12 * 60 * 60 * 1000);
