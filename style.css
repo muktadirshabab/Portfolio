@@ -483,9 +483,6 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
     bottom: var(--distance, 10rem);
   }
 }
-/* ===== Scroll Gallery ===== */
-.scroll-gallery::-webkit-scrollbar { display: none; }
-.scroll-gallery { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
