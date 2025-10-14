@@ -69,50 +69,36 @@ window.addEventListener('scroll', () => {
   });
 });
 
+const colors = [
+  // dark blue shades
+  '#001122', '#002244', '#003366', '#004080',
+  // dark gray shades
+  '#111111', '#222222', '#333333', '#444444',
+  // dark purple shades
+  '#2e003e', '#3b0050', '#4a0066', '#5c007a'
+];
 
-function loadBloggerPosts(json) {
-  const slider = document.getElementById("news-slider");
-  const entries = json.feed.entry || [];
-
-  if (!entries.length) {
-    slider.textContent = "No updates found.";
-    return;
-  }
-
-  let html = '';
-  for (let i = 0; i < Math.min(10, entries.length); i++) {
-    const e = entries[i];
-    const title = e.title.$t;
-    const link = e.link.find(l => l.rel === "alternate").href;
-    const date = new Date(e.published.$t).toLocaleDateString();
-    const tag = e.category?.[0]?.term || "General";
-    html += `<span class="news-item"><a href="${link}" target="_blank">${title} — ${date} [${tag}]</a></span> • `;
-  }
-
-  slider.innerHTML = html + html; // duplicate for continuous loop
-  startContinuousScroll(slider);
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function startContinuousScroll(slider) {
-  let pos = 0;
-  function scroll() {
-    pos -= 0.05; // slower scroll speed
-    if (Math.abs(pos) >= slider.scrollWidth / 2) pos = 0;
-    slider.scrollLeft = pos;
-    requestAnimationFrame(scroll);
+function updateBackgroundSmooth() {
+  const color = getRandomColor();
+  
+  // Smooth transition
+  document.body.style.transition = 'background-color 1.5s ease';
+  document.body.style.backgroundColor = color;
+
+  // Update browser toolbar color
+  let themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (!themeMeta) {
+    themeMeta = document.createElement('meta');
+    themeMeta.name = 'theme-color';
+    document.head.appendChild(themeMeta);
   }
-  scroll();
+  themeMeta.content = color;
 }
 
-function fetchBloggerFeed() {
-  const oldScript = document.getElementById("bloggerFeedScript");
-  if (oldScript) oldScript.remove();
-  const script = document.createElement("script");
-  script.id = "bloggerFeedScript";
-  script.src = "https://blyere.blogspot.com/feeds/posts/default/-/Projects%20Vlog?alt=json-in-script&callback=loadBloggerPosts";
-  document.head.appendChild(script);
-}
-
-fetchBloggerFeed();
-setInterval(fetchBloggerFeed, 60000);
-
+// Initial setup
+updateBackgroundSmooth();
+setInterval(updateBackgroundSmooth, 2000);
