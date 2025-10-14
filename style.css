@@ -250,8 +250,8 @@ body {
 
 /* Profile Box - Round Glassmorphism */
 .profile-box {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   margin: 20px auto;
