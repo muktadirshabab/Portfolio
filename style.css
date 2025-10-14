@@ -177,7 +177,58 @@ body {
 
 
 
+/* ===== DIAGONAL NEWS WRAPPER ===== */
+.news-wrapper {
+  position: absolute;
+  bottom: -50px; /* increase the negative value to move it further down */
+  left: 0;
+  width: 200%;
+  height: 140px; /* taller for long text */
+  overflow: hidden;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10;
+  transform: rotate(-15deg); /* rotate the whole slider */
+  transform-origin: bottom left;
+}
 
+/* Container to hold the scrolling items */
+.news-slider {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  display: flex;
+  gap: 60px;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 2.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+  animation: diagonalSlide 30s linear infinite;
+}
+
+.news-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.news-item strong {
+  text-decoration: underline;
+}
+
+/* true diagonal sliding */
+@keyframes diagonalSlide {
+  0% { transform: translateX(100%) translateY(-50%); }
+  100% { transform: translateX(-200%) translateY(-50%); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .news-wrapper { height: 70px; }
+  .news-slider { font-size: 3rem; line-height: 1rem; animation-duration: 40s; }
+}
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
