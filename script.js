@@ -121,16 +121,16 @@ if (!lastUpdate || now - lastUpdate > twelveHours) {
 }
 
 
-const bubblesContainer = document.getElementById('bubbles');
-const bubbleCount = 64;
+  const bubblesContainer = document.getElementById('bubbles');
+  const bubbleCount = 64; // Reduced for performance
 
-for (let i = 0; i < bubbleCount; i++) {
-  const bubble = document.createElement('div');
-  bubble.className = 'bubble';
-  bubble.style.setProperty('--size', `${2 + Math.random() * 4}rem`);
-  bubble.style.setProperty('--distance', `${6 + Math.random() * 4}rem`);
-  bubble.style.setProperty('--position', `${-5 + Math.random() * 110}%`);
-  bubble.style.setProperty('--time', `${2 + Math.random() * 2}s`);
-  bubble.style.setProperty('--delay', `${-1 * (2 + Math.random() * 2)}s`);
-  bubblesContainer.appendChild(bubble);
-}
+  for (let i = 0; i < bubbleCount; i++) {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.style.setProperty('--size', `${2 + Math.random() * 4}rem`);
+    bubble.style.setProperty('--distance', `${6 + Math.random() * 4}rem`);
+    bubble.style.setProperty('--position', `${-5 + Math.random() * 110}%`);
+    bubble.style.setProperty('--time', `${2 + Math.random() * 2}s`);
+    bubble.style.setProperty('--delay', `${-1 * (2 + Math.random() * 2)}s`);
+    bubblesContainer.appendChild(bubble);
+  }
