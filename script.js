@@ -101,4 +101,6 @@ function shadeColor(color, percent) {
 
 // Initial setup
 updateBackgroundSmooth();
-setInterval(updateBackgroundSmooth, 2000);
+
+// Change color every 12 hours (12 hours = 12 * 60 * 60 * 1000 ms)
+setInterval(updateBackgroundSmooth, 12 * 60 * 60 * 1000);
