@@ -85,7 +85,7 @@ function getRandomColor() {
 function updateBackgroundSmooth() {
   const color = getRandomColor();
   
-  // Smooth transition
+  // Smooth transition for body
   document.body.style.transition = 'background-color 1.5s ease';
   document.body.style.backgroundColor = color;
 
@@ -97,6 +97,20 @@ function updateBackgroundSmooth() {
     document.head.appendChild(themeMeta);
   }
   themeMeta.content = color;
+
+  // Update CSS root variables
+  const root = document.documentElement;
+  root.style.setProperty('--color-nav-solid', color);
+  // For dark variant, make it a bit darker
+  const darkColor = shadeColor(color, -30);
+  root.style.setProperty('--color-nav-dark', darkColor);
+}
+
+// Helper function to darken/lighten color
+function shadeColor(color, percent) {
+  let f = parseInt(color.slice(1),16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent*-1 : percent;
+  let R = f>>16, G = f>>8&0x00FF, B = f&0x0000FF;
+  return "#" + (0x1000000 + (Math.round((t-R)*p/100)+R)*0x10000 + (Math.round((t-G)*p/100)+G)*0x100 + (Math.round((t-B)*p/100)+B)).toString(16).slice(1);
 }
 
 // Initial setup
