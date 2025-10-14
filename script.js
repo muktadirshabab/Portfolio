@@ -55,20 +55,6 @@ document.addEventListener('click', e => {
 });
 
 
-// Scroll activation for best cards
-const bestCards = document.querySelectorAll('.best-card');
-window.addEventListener('scroll', () => {
-  const triggerBottom = window.innerHeight / 1.2;
-  bestCards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if (cardTop < triggerBottom) {
-      card.classList.add('active');
-    } else {
-      card.classList.remove('active');
-    }
-  });
-});
-
 const colors = [
   // dark blue shades
   '#001122', '#002244', '#003366', '#004080',
