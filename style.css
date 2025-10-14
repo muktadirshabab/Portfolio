@@ -402,6 +402,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   left: 0;
   right: 0;
   height: 1rem;
+  width: 98%;
   background: var(--footer-background);
   filter: url("#blob");
 }
