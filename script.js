@@ -57,11 +57,11 @@ document.addEventListener('click', e => {
 
 const colors = [
   // dark blue shades
-  '#001122', '#002244', '#003366', '#004080',
+  '#8A8EB6', '#3A3A46', '#8C90B5', '#354990',
   // dark gray shades
-  '#111111', '#222222', '#333333', '#444444',
+  '#0F1038', '#8C90AA', '#9599BC', '#474958',
   // dark purple shades
-  '#2e003e', '#3b0050', '#4a0066', '#5c007a'
+  '#1A1B51', '#454267', '#0D123A', '#222F97'
 ];
 
 function getRandomColor() {
