@@ -45,9 +45,13 @@
 </head>
   </head>
 <body>
-  <nav class="navbar" id="navbar">
-    <a href="/" class="navbar-logo">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Alumni+Sans&family=Alumni+Sans+Pinstripe&family=Poiret+One&display=swap" rel="stylesheet">
+<nav class="navbar" id="navbar">
+  <!-- Logo -->
+  <a href="#" class="navbar-logo">
+         <svg class="logo-svg" version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="40" height="40" viewBox="0 0 999.000000 570.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -116,49 +120,36 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
 15 47 11 48 11 48 0z"/>
 </g>
 </svg>
-    </a>
-    <div class="navbar-center">
-      <ul class="navbar-menu" id="navbarMenu">
-        <li>
-          <a href="#">Home</a>
-          <ul class="submenu">
-            <li><a href="#">Overview</a></li>
-            <li><a href="#">Updates</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">About</a>
-          <ul class="submenu">
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Services</a>
-          <ul class="submenu">
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Development</a></li>
-            <li><a href="#">Design</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-          <ul class="submenu">
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Locations</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <button class="navbar-hamburger" aria-label="Open menu" id="navbarHamburger">
-      <span class="hamburger-lines">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </span>
-    </button>
-  </nav>
+  </a>
 
-  
+  <!-- Navbar menu -->
+  <div class="navbar-center">
+    <ul class="navbar-menu" id="navbarMenu">
+      <li><a href="#">Home</a>
+        <ul class="submenu"><li><a href="#">Overview</a></li><li><a href="#">Updates</a></li></ul>
+      </li>
+      <li><a href="#">About</a>
+        <ul class="submenu"><li><a href="#">Team</a></li><li><a href="#">Careers</a></li></ul>
+      </li>
+      <li><a href="#">Services</a>
+        <ul class="submenu"><li><a href="#">Consulting</a></li><li><a href="#">Development</a></li><li><a href="#">Design</a></li></ul>
+      </li>
+      <li><a href="#">Contact</a>
+        <ul class="submenu"><li><a href="#">Support</a></li><li><a href="#">Locations</a></li></ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hamburger -->
+  <button class="navbar-hamburger" aria-label="Open menu" id="navbarHamburger">
+    <span class="hamburger-lines">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </span>
+  </button>
+</nav>
+
+
 <section class="hero">
   <video autoplay muted loop playsinline>
     <source src="https://www.pexels.com/download/video/6109112/">
@@ -167,7 +158,7 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
   <div class="overlay"></div>
 
   <div class="content">
-    <h6>Creative Designer & Developer</h6>
+    <h3>Creative Designer & Developer</h3>
     <h1>Muktadir Shabab</h1>
 
     <h2 class="hero-skills">
@@ -186,50 +177,101 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
 
 <!-- Social Icons -->
 <div class="social-icons">
-  <a href="https://facebook.com" target="_blank" class="fab fa-facebook-f"></a>
-  <a href="https://twitter.com" target="_blank" class="fab fa-twitter"></a>
-  <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
-  <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin-in"></a>
+  <a href="https://www.facebook.com/MuktadirShabab" target="_blank" class="fab fa-facebook-f"></a>
+  <a href="https://www.instagram.com/muktadirshabab" target="_blank" class="fab fa-instagram"></a>
+     
 </div>
   </div>
 </section>
 
-  <div class="news-wrapper">
-    <div class="news-track" id="newsTrack">
-      <!-- Dynamic posts will appear here -->
+  <section class="scroll-section">
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://www.pexels.com/download/video/7946013/" type="video/mp4">
+  </video>
+
+  <!-- ==== Section Title and Meta Description ==== -->
+  <div class="section-header">
+    <h2>My Artbooks – A Journey Through Visual Expression</h2>
+    <p>Explore my personal collection of artbooks that blend imagination, emotion, and design. Each page tells a story of creativity and visual storytelling crafted from the heart.</p>
+  </div>
+
+  <div class="card-container">
+    <a href="#" class="card">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759996999/20251009_134558_0000_edit_1833002481072485_kknxrh.png" alt="Artbook Cover 1 - Abstract Design by Muktadir Shabab">
+    </a>
+    <a href="#" class="card">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759997000/Untitled_design_20251009_135654_0000_edit_1833508860234439_hebjfj.png" alt="Artbook Cover 2 - Modern Art by Muktadir Shabab">
+    </a>
+    <a href="#" class="card">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759996999/Untitled_design_20251009_140120_0000_edit_1833751838770684_hrg2lu.png" alt="Artbook Cover 3 - Creative Concept by Muktadir Shabab">
+    </a>
+  </div>
+</section>
+
+  
+  <!-- Section Title and Description -->
+<div class="section-header">
+  <h2 class="best-card-content">
+    Discover My Recent Best Artworks
+  </h2>
+  <p>
+    Explore a curated collection of my latest creations, blending contemporary styles with timeless techniques. Each piece is designed to inspire, evoke emotion, and transform your space.
+  </p>
+</div>
+
+<!-- Container for best cards -->
+<div class="best-cards">
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1760424963/1759316651135_edit_1426934925211590_va4whe.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Watercolor Peacock</h2>
+      Painting 1
     </div>
   </div>
-  <div class="art-section">
-  <h2>My Artworks</h2>
-  <p>A collection of my creative paintings, designs, and visual expressions that capture my artistic journey.</p>
-    <h2 style="font-family: 'Brush Script MT', cursive; font-size: 2rem; color: #708238;">
 
-  Also Become a Collector
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1760424963/1759314970535_edit_1425756511931596_lowemc.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Soft Pastel Portrait</h2>
+      Painting 2
+    </div>
+  </div>
 
-</h2>
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1759686277/art/IMG-20250525-WA0013_1__edit_1638725646339059_fwybtp.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Soft Pastel Figure</h2>
+      Painting 3
+    </div>
+  </div>
+
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1759686665/1759305130261_edit_1416806524984370_zvkdpa.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Wall Painting Nature</h2>
+      Wall-Painting 4
+    </div>
+  </div>
+
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1759983013/Collage_20251006_000142_edit_1819932890777706_uv7fj6.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Folk Painting</h2>
+      Wall-Painting 5
+    </div>
+  </div>
+
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1760417657/1759985244005_edit_1822143639008454_tlepbv.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Acrylic Seascape</h2>
+      Painting 6
+    </div>
+  </div>
+
+  <div class="best-card" style="background-image: url('https://res.cloudinary.com/dxiwnqpja/image/upload/v1760424965/IMG_20251001_165513_h92rwo.jpg');">
+    <div class="best-card-content">
+      <h2 style="margin:0; font-size:2rem;">Acrylic</h2>
+      Wall-Painting 7
+    </div>
+  </div>
 </div>
-<section class="scroll-gallery">
-  <div class="gallery-container">
-    <a href="https://example.com/image1" class="image-card" target="_blank">
-      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759996999/20251009_134558_0000_edit_1833002481072485_kknxrh.png" alt="Muktadir Sketching">
-    </a>
 
-    <a href="https://example.com/image2" class="image-card" target="_blank">
-      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759996999/Untitled_design_20251009_140120_0000_edit_1833751838770684_hrg2lu.png" alt="Muktadir Scapes">
-    </a>
-
-    <a href="https://example.com/image3" class="image-card" target="_blank">
-      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1759997000/Untitled_design_20251009_135654_0000_edit_1833508860234439_hebjfj.png" alt="Muktadir Wall Paint">
-    </a>
-  </div>
-
-  <div class="scroll-indicator">
-    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
-    <span>Scroll For More</span>
-  </div>
-</section>
+  
 
 <footer class="footer">
   <div class="footer-logo">
@@ -324,5 +366,5 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
 <script src="script.js"></script>
 <!-- Add Font Awesome CDN for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
