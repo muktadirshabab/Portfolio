@@ -209,7 +209,111 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
   </div>
 </section>
 
+<!-- Container for events -->
+<div id="upcoming-events" style="width:70%; margin:0 auto; display:grid; gap:20px;"></div>
 
+<script>
+function loadUpcomingEvents() {
+    const container = document.getElementById('upcoming-events');
+    container.innerHTML = 'Loading...';
+
+    // Blogger JSONP URL for label 'Event' with 10 posts
+    const script = document.createElement('script');
+    script.src = 'https://blyere.blogspot.com/feeds/posts/default/-/Event?alt=json-in-script&max-results=10&callback=displayEvents';
+    document.body.appendChild(script);
+}
+
+// Callback function for JSONP
+function displayEvents(data) {
+    const container = document.getElementById('upcoming-events');
+    const posts = data.feed.entry || [];
+    container.innerHTML = '';
+
+    const recentPosts = [];
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+
+    for (let post of posts) {
+        const published = new Date(post.published.$t);
+        if (published.getMonth() === currentMonth && published.getFullYear() === currentYear) {
+            recentPosts.push(post);
+        }
+        if (recentPosts.length >= 3) break;
+    }
+
+    if (recentPosts.length === 0) {
+        container.innerHTML = '<p>No recent events this month.</p>';
+        return;
+    }
+
+    recentPosts.forEach(post => {
+        const postLink = post.link.find(l => l.rel === 'alternate').href;
+        const content = post.content ? post.content.$t : '';
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+
+        const h2Text = tempDiv.querySelector('u') ? tempDiv.querySelector('u').innerText.trim() : 'No Title';
+        let dateText = 'No Date';
+        const uBold = tempDiv.querySelector('u b');
+        if (uBold) dateText = uBold.innerText.trim();
+
+        let locationText = 'No Location';
+        const iU = tempDiv.querySelector('i u');
+        if (iU) locationText = iU.innerText.replace(/\s+$/,'').trim();
+
+        const card = document.createElement('div');
+        card.style.cssText = `
+            padding: 20px 25px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background 0.3s;
+        `;
+        card.onmouseover = () => card.style.background = 'rgba(255,255,255,0.15)';
+        card.onmouseout = () => card.style.background = 'rgba(255,255,255,0.08)';
+
+        card.innerHTML = `
+            <h2 style="margin:0; font-size:1.5rem;">${h2Text}</h2>
+            <p style="margin:0; font-size:1rem;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> ${dateText}</p>
+            <p style="margin:0; font-size:1rem;"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> ${locationText}</p>
+            <a href="${postLink}" target="_blank" style="
+                padding: 10px 16px;
+                border: 1px solid #fff;
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 6px;
+                display: inline-block;
+                width: fit-content;
+                transition: 0.3s;
+                font-weight: 500;
+            " onmouseover="this.style.background='#fff';this.style.color='#000';" onmouseout="this.style.background='transparent';this.style.color='#fff';">Join</a>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// Responsive grid layout
+function setResponsiveGrid() {
+    const container = document.getElementById('upcoming-events');
+    if (window.innerWidth >= 768) {
+        container.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    } else {
+        container.style.gridTemplateColumns = '1fr';
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    loadUpcomingEvents();
+    setResponsiveGrid();
+});
+window.addEventListener('resize', setResponsiveGrid);
+</script>
 <footer class="footer">
   <div class="footer-logo">
     <!-- Example SVG logo -->
