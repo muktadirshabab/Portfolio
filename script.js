@@ -68,3 +68,38 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+function loadBloggerPosts(json) {
+  const slider = document.getElementById("news-slider");
+  const entries = json.feed.entry || [];
+
+  if (!entries.length) {
+    slider.innerHTML = "<p>No updates found.</p>";
+    return;
+  }
+
+  // Build slider items quickly using innerHTML once
+  let html = '';
+  for (let i = 0; i < Math.min(10, entries.length); i++) {
+    const e = entries[i];
+    const title = e.title.$t;
+    const link = e.link.find(l => l.rel === "alternate").href;
+    const date = new Date(e.published.$t).toLocaleDateString();
+    const tag = e.category?.[0]?.term || "General";
+
+    html += `<div class="news-item">
+               <a href="${link}" target="_blank">
+                 <strong>${title}</strong> — ${date} <em>[${tag}]</em>
+               </a>
+             </div>`;
+  }
+
+  slider.innerHTML = html;
+}
+
+// Fast JSONP injection
+const script = document.createElement("script");
+script.src = "https://blyere.blogspot.com/feeds/posts/default/-/Projects%20Vlog?alt=json-in-script&callback=loadBloggerPosts";
+document.body.appendChild(script);
+
