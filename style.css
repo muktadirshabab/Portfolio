@@ -385,7 +385,6 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 
 /* ===== Footer ===== */
 .footer {
-  width: 100%;
   z-index: 1;
   --footer-background: black;
   display: grid;
@@ -394,6 +393,8 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   min-height: 12rem;
   background: var(--footer-background);
   color: #F5F7FA;
+  width: 100vw; /* full screen width */
+  left: 0;       /* ensure alignment */
 }
 
 .footer .bubbles {
@@ -401,8 +402,8 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;   /* make bubbles span full footer width */
   height: 1rem;
-  width: 98%;
   background: var(--footer-background);
   filter: url("#blob");
 }
@@ -424,6 +425,9 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   gap: 2rem;
   padding: 2rem;
   background: var(--footer-background);
+  width: 100%; /* full width */
+  max-width: 1200px; /* optional, keeps content centered */
+  margin: 0 auto;    /* center content on large screens */
 }
 
 .footer .content a,
@@ -464,26 +468,6 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   font-size: 0.75rem;
   color: #aaa;
   margin-top: 10px;
-}
-
-@keyframes bubble-size {
-  0%, 75% {
-    width: var(--size, 4rem);
-    height: var(--size, 4rem);
-  }
-  100% {
-    width: 0rem;
-    height: 0rem;
-  }
-}
-
-@keyframes bubble-move {
-  0% {
-    bottom: -4rem;
-  }
-  100% {
-    bottom: var(--distance, 10rem);
-  }
 }
 
 /* ===== Responsive ===== */
