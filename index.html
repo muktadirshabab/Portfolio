@@ -263,22 +263,23 @@ function displayEvents(data) {
 
         const card = document.createElement('div');
         card.style.cssText = `
-            padding: 20px 25px;
+            padding: 15px 20px; /* reduced padding */
             border-radius: 12px;
             background: transparent;
             color: white;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px; /* reduced gap */
             text-align: left;
+            font-size: 14px; /* font size reduced */
         `;
 
         card.innerHTML = `
-            <h2 style="margin:0;">${h2Text}</h2>
-            <p style="margin:0;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> ${dateText}</p>
-            <p style="margin:0;"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> ${locationText}</p>
+            <h2 style="margin:0; font-size:16px;">${h2Text}</h2> <!-- Title font size -->
+            <p style="margin:0; font-size:14px;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> ${dateText}</p> <!-- Date font size -->
+            <p style="margin:0; font-size:14px;"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> ${locationText}</p> <!-- Location font size -->
             <a href="${postLink}" target="_blank" style="
-                padding: 10px 16px;
+                padding: 8px 12px; /* reduced padding */
                 border: 1px solid #fff;
                 color: white;
                 text-align: center;
@@ -286,6 +287,7 @@ function displayEvents(data) {
                 border-radius: 6px;
                 display: inline-block;
                 width: fit-content;
+                font-size:13px; /* Join button font size */
             ">Join</a>
         `;
 
@@ -309,7 +311,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 window.addEventListener('resize', setResponsiveGrid);
 </script>
-
 
   <div style="max-width:500px; margin:50px auto; padding:20px;  text-align:left; border-left:4px solid #fff; background-color: transparent;">
   <h2 style="margin-bottom:10px;">🚀 Hire Me</h2>
