@@ -385,6 +385,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 
 /* ===== Footer ===== */
 .footer {
+  width: 100%;
   z-index: 1;
   --footer-background: black;
   display: grid;
