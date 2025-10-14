@@ -232,6 +232,7 @@ body {
 
 /* Headings */
 .content h3 {
+  text-align: center;
   font-family: var(--font-h3);
   font-size: var(--fs-h3);
   letter-spacing: 2px;
@@ -285,8 +286,7 @@ body {
     position: relative;
   }
 
-  .content h1,
-  .content p {
+  .content h1,{
     text-align: right;
   margin-right: 1rem;
   }
@@ -333,6 +333,7 @@ body {
 
 /* ===== BUTTON ===== */
 .btn {
+  justify-content: center ;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 2px solid #fff;
@@ -374,7 +375,6 @@ body {
   }
 
   .content {
-    text-align: left; /* left-align text */
     padding: 0;
   }
 
@@ -385,7 +385,7 @@ body {
 
   .social-icons {
     display: flex;
-    justify-content: flex-start; /* left-aligned icons */
+    justify-content: center; /* left-aligned icons */
   }
 }
 
