@@ -182,7 +182,7 @@ body {
   position: absolute;
   bottom: -50px; /* increase the negative value to move it further down */
   left: 0;
-  width: 100%;
+  width: 130%;
   height: 140px; /* taller for long text */
   overflow: hidden;
   background: rgba(0,0,0,0.25);
