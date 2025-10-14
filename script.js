@@ -75,11 +75,10 @@ function loadBloggerPosts(json) {
   const entries = json.feed.entry || [];
 
   if (!entries.length) {
-    slider.innerHTML = "<p>No updates found.</p>";
+    slider.textContent = "No updates found.";
     return;
   }
 
-  // Build slider items quickly using innerHTML once
   let html = '';
   for (let i = 0; i < Math.min(10, entries.length); i++) {
     const e = entries[i];
@@ -87,19 +86,33 @@ function loadBloggerPosts(json) {
     const link = e.link.find(l => l.rel === "alternate").href;
     const date = new Date(e.published.$t).toLocaleDateString();
     const tag = e.category?.[0]?.term || "General";
-
-    html += `<div class="news-item">
-               <a href="${link}" target="_blank">
-                 <strong>${title}</strong> — ${date} <em>[${tag}]</em>
-               </a>
-             </div>`;
+    html += `<span class="news-item"><a href="${link}" target="_blank">${title} — ${date} [${tag}]</a></span> • `;
   }
 
-  slider.innerHTML = html;
+  slider.innerHTML = html + html; // duplicate for continuous loop
+  startContinuousScroll(slider);
 }
 
-// Fast JSONP injection
-const script = document.createElement("script");
-script.src = "https://blyere.blogspot.com/feeds/posts/default/-/Projects%20Vlog?alt=json-in-script&callback=loadBloggerPosts";
-document.body.appendChild(script);
+function startContinuousScroll(slider) {
+  let pos = 0;
+  function scroll() {
+    pos -= 0.05; // slower scroll speed
+    if (Math.abs(pos) >= slider.scrollWidth / 2) pos = 0;
+    slider.scrollLeft = pos;
+    requestAnimationFrame(scroll);
+  }
+  scroll();
+}
+
+function fetchBloggerFeed() {
+  const oldScript = document.getElementById("bloggerFeedScript");
+  if (oldScript) oldScript.remove();
+  const script = document.createElement("script");
+  script.id = "bloggerFeedScript";
+  script.src = "https://blyere.blogspot.com/feeds/posts/default/-/Projects%20Vlog?alt=json-in-script&callback=loadBloggerPosts";
+  document.head.appendChild(script);
+}
+
+fetchBloggerFeed();
+setInterval(fetchBloggerFeed, 60000);
 
