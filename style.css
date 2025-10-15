@@ -12,7 +12,7 @@
   --font-p: 'Montserrat', cursive;
 
   /* Font Sizes - Mobile default */
-  --fs-h1: 1.9rem;
+  --fs-h1: 2rem;
   --fs-h2: 1.6rem;
   --fs-h3: 1.4rem;
   --fs-p: 0.9rem;
@@ -203,7 +203,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 .hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 60vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -230,7 +230,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: transparent;
   z-index: 2;
 }
 .content {
@@ -266,7 +266,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   margin: 0 auto;
 }
 .hero-skills span {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: var(--font-h3);
   display: block;
   position: absolute;
@@ -405,8 +405,8 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 @media (max-width: 480px) {
   :root {
   --font-size-logo: 1.8rem;
-  --font-size-menu: 1.1rem;
-  --font-size-submenu: 0.9rem;
+  --font-size-menu: 1.6rem;
+  --font-size-submenu: 1.3rem;
   --navbar-padding-x: 0.8rem;
 }
   .navbar-center { justify-content: flex-start; width: 100vw; }
