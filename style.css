@@ -160,7 +160,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 }
 .submenu li { list-style: none; }
 .submenu a {
-  font-family: var(--font-p);
+  font-family: var(--font-h3);
   color: var(--color-white);
   text-decoration: none;
   display: block;
