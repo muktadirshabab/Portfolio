@@ -6,12 +6,10 @@
   --color-white: #fff;
   --color-nav-transparent: rgba(0,0,0,0);
 
-:root {
   --font-h1: 'Archivo Black', sans-serif;
   --font-h2: 'Anton', sans-serif;
   --font-h3: 'Alumni Sans Pinstripe', sans-serif;
   --font-p: 'Montserrat', cursive;
-}
 
   /* Font Sizes - Mobile default */
   --fs-h1: 3.3rem;
