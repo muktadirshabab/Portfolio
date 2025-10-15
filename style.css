@@ -29,7 +29,10 @@
 
   /* Transition */
   --transition: 0.35s cubic-bezier(.4,0,.2,1);
-
+  /* Profile Position */
+  --profile-x: -10px;
+  --profile-y: 50px;
+}
 /* Desktop Font Sizes */
 @media (min-width: 900px) {
   :root {
