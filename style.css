@@ -114,6 +114,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 .navbar-menu > li { text-align: center; }
 
 .navbar-menu > li > a {
+  font-weight: 300;
   font-family: var(--font-h3);
   color: var(--color-white);
   text-decoration: none;
@@ -160,6 +161,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 .submenu li { list-style: none; }
 .submenu a {
   font-family: var(--font-h3);
+  font-weight: 200;
   color: var(--color-white);
   text-decoration: none;
   display: block;
