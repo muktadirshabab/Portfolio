@@ -265,7 +265,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   margin: 0 auto;
 }
 .hero-skills span {
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   display: block;
   position: absolute;
   opacity: 0;
@@ -282,7 +282,6 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   40% { opacity: 0; transform: translateY(-100%); }
   100% { opacity: 0; transform: translateY(-100%); }
 }
-
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;
