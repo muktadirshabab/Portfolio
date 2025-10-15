@@ -262,7 +262,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   margin: 0 auto;
 }
 .hero-skills span {
-  font-size: var(--fs-h2);
+  font-size: 1.4rem;
   display: block;
   position: absolute;
   opacity: 0;
