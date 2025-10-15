@@ -12,15 +12,15 @@
   --font-p: 'Montserrat', cursive;
 
   /* Font Sizes - Mobile default */
-  --fs-h1: 3.3rem;
-  --fs-h2: 2em;
-  --fs-h3: 1.5rem;
-  --fs-p: 1.4rem;
+  --fs-h1: 1.8rem;
+  --fs-h2: 1.4rem;
+  --fs-h3: 1.1rem;
+  --fs-p: 0.9rem;
 
   /* Navbar Fonts & Sizes */
-  --font-size-logo: 2rem;
-  --font-size-menu: 1.31rem;
-  --font-size-submenu: 1.1rem;
+  --font-size-logo: 1.5rem;
+  --font-size-menu: 1rem;
+  --font-size-submenu: 0.85rem;
 
   /* Navbar Spacing */
   --navbar-padding-x: 0.5rem;
@@ -29,11 +29,6 @@
 
   /* Transition */
   --transition: 0.35s cubic-bezier(.4,0,.2,1);
-
-  /* Profile Position */
-  --profile-x: -10px;
-  --profile-y: 50px;
-}
 
 /* Desktop Font Sizes */
 @media (min-width: 900px) {
@@ -218,7 +213,7 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   z-index: 1;
   transform: translate(-50%, -50%);
