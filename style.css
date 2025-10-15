@@ -258,7 +258,6 @@ p  { font-family: var(--font-p);  font-size: var(--fs-p); }
 
 /* Hero Skills Slider */
 .hero-skills {
-  font-weight: 100;
   height: 4rem;
   overflow: hidden;
   position: relative;
