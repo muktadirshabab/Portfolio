@@ -1,122 +1,78 @@
-// ===== Elements =====
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('navbarHamburger');
-const menu = document.getElementById('navbarMenu');
+// nav bar start
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const submenuToggle = document.querySelector('.submenu-toggle');
+const mobileSubmenuItems = document.querySelector('.mobile-submenu-items');
 
-// ===== Hamburger toggle =====
-hamburger.addEventListener('click', function () {
-  hamburger.classList.toggle('open');
-  menu.classList.toggle('open');
-  navbar.classList.toggle('menu-open', menu.classList.contains('open'));
-  if(!menu.classList.contains('open')) checkScroll();
+// Toggle mobile menu
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// ===== Mobile submenu toggle =====
-document.querySelectorAll('.navbar-menu > li > a').forEach(item => {
-  item.addEventListener('click', function(e) {
-    const parent = this.parentElement;
-    const submenu = parent.querySelector('.submenu');
+// Toggle submenu in mobile
+submenuToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  mobileSubmenuItems.style.display = mobileSubmenuItems.style.display === 'flex' ? 'none' : 'flex';
+});
 
-    if (window.innerWidth <= 900 && submenu) {
-      e.preventDefault(); // prevent link navigation
-
-      const isOpen = parent.classList.contains('open'); // check if this submenu is already open
-
-      // Close all submenus
-      document.querySelectorAll('.navbar-menu > li.open').forEach(li => {
-        li.classList.remove('open');
-      });
-
-      // Open clicked submenu only if it was not already open
-      if (!isOpen) {
-        parent.classList.add('open');
-      }
-    }
+// Close mobile submenu and menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileSubmenuItems.contains(e.target) && !submenuToggle.contains(e.target)) {
+    mobileSubmenuItems.style.display = 'none';
+  }
+  if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    mobileMenu.style.display = 'none';
+    hamburger.classList.remove('active');
+  }
+});
+// nav end
+//f&q
+  const faqButtons = document.querySelectorAll('.faq-btn');
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      answer.classList.toggle('hidden');
+    });
   });
-});
-// ===== Scroll background =====
-window.addEventListener('scroll', checkScroll);
-function checkScroll() {
-  if(menu.classList.contains('open')) return;
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+//f&q end
+// blogger start
+function displayBloggerPost(data) {
+    const entry = data.feed.entry[0];
+
+    // Post title
+    const title = entry.title.$t;
+
+    // Post content
+    const content = entry.content.$t;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = content;
+
+    // First 3 images
+    const imgs = Array.from(tempDiv.querySelectorAll('img')).slice(0, 3);
+    const gallery = document.querySelector('#gallery');
+    gallery.innerHTML = '';
+    imgs.forEach(img => {
+        const div = document.createElement('div');
+        div.className = 'p-1 sm:p-2 bg-white border-2 border-black shadow-lg w-24 h-32 sm:w-36 sm:h-48 md:w-48 md:h-64 flex items-center justify-center';
+        const image = document.createElement('img');
+        image.src = img.src;
+        image.alt = img.alt || title;
+        image.className = 'w-full h-full object-cover';
+        div.appendChild(image);
+        gallery.appendChild(div);
+    });
+
+    // Underlined text
+    const underlined = Array.from(tempDiv.querySelectorAll('u')).map(u => u.innerText).join(' ');
+    document.querySelector('#edition-details').innerText = underlined;
+
+    // Set edition title
+    document.querySelector('#edition-title').innerText = `Upcoming Edition: ${title}`;
 }
 
-// ===== Close menu on outside click =====
-document.addEventListener('click', e => {
-  if(window.innerWidth <= 900) {
-    if(!menu.contains(e.target) && !hamburger.contains(e.target)) {
-      menu.classList.remove('open');
-      hamburger.classList.remove('open');
-      navbar.classList.remove('menu-open');
-      document.querySelectorAll('.navbar-menu > li.open').forEach(li => li.classList.remove('open'));
-      checkScroll();
-    }
-  }
-});
-
-
-const colors = [
-  '#8A8EB6', '#3A3A46', '#8C90B5', '#354990',
-  '#0F1038', '#8C90AA', '#9599BC', '#474958',
-  '#1A1B51', '#454267', '#0D123A', '#222F97'
-];
-
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function shadeColor(color, percent) {
-  let f = parseInt(color.slice(1),16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent*-1 : percent;
-  let R = f>>16, G = f>>8&0x00FF, B = f&0x0000FF;
-  return "#" + (0x1000000 + (Math.round((t-R)*p/100)+R)*0x10000 + (Math.round((t-G)*p/100)+G)*0x100 + (Math.round((t-B)*p/100)+B)).toString(16).slice(1);
-}
-
-function updateBackgroundSmooth(color) {
-  // Smooth transition for body
-  document.body.style.transition = 'background-color 1.5s ease';
-  document.body.style.backgroundColor = color;
-
-  // Update browser toolbar color
-  let themeMeta = document.querySelector('meta[name="theme-color"]');
-  if (!themeMeta) {
-    themeMeta = document.createElement('meta');
-    themeMeta.name = 'theme-color';
-    document.head.appendChild(themeMeta);
-  }
-  themeMeta.content = color;
-
-  // Update CSS root variables
-  const root = document.documentElement;
-  root.style.setProperty('--color-nav-solid', color);
-  const darkColor = shadeColor(color, -30);
-  root.style.setProperty('--color-nav-dark', darkColor);
-}
-
-// Check last update from localStorage
-const lastUpdate = localStorage.getItem('bgColorLastUpdate');
-const savedColor = localStorage.getItem('bgColorValue');
-const now = Date.now();
-const twelveHours = 12 * 60 * 60 * 1000;
-
-if (!lastUpdate || now - lastUpdate > twelveHours) {
-  const newColor = getRandomColor();
-  updateBackgroundSmooth(newColor);
-  localStorage.setItem('bgColorLastUpdate', now);
-  localStorage.setItem('bgColorValue', newColor);
-} else {
-  updateBackgroundSmooth(savedColor);
-  // Set a timeout for remaining time to next 12-hour change
-  setTimeout(() => {
-    const nextColor = getRandomColor();
-    updateBackgroundSmooth(nextColor);
-    localStorage.setItem('bgColorLastUpdate', Date.now());
-    localStorage.setItem('bgColorValue', nextColor);
-    setInterval(() => {
-      const next = getRandomColor();
-      updateBackgroundSmooth(next);
-      localStorage.setItem('bgColorValue', next);
-      localStorage.setItem('bgColorLastUpdate', Date.now());
-    }, twelveHours);
-  }, twelveHours - (now - lastUpdate));
-}
-
+// Create JSONP script
+const script = document.createElement('script');
+script.src = 'https://blyere.blogspot.com/feeds/posts/default/-/pictures?alt=json-in-script&max-results=1&callback=displayBloggerPost';
+document.body.appendChild(script);
+// end
