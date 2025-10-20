@@ -1,3 +1,12 @@
+/* === Body CSS Start === */
+body {
+  background-color: white;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* === Body CSS End === */
 /* START Responsive Typography CSS */
 
 /* H1 - BBH Sans Bartle */
