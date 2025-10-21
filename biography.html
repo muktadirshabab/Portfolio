@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="theme-color" content="#101318">
     <!-- Basic Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,28 +24,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://muktadirshabab.github.io/Portfolio/">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&family=Open+Sans:ital,wght@0,400;1,400&family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Revalia&family=Archivo+Black&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pap1Dw7IqUKkyL1lLYlFvXrq6A6q1vPbTT+WjpZHLT7FVq6/jR2dYidZ0IWpP+oaNlNk1GfN3v5W/7ezk5q6Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- START Google Fonts Preconnect & Links -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Ravalia&family=Bebas+Neue&family=Anton&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;700&family=Caveat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-  <style>
-      *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}a{text-decoration:none;color:inherit;cursor:pointer}ul{list-style:none}.navbar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:black;color:white;position:fixed;top:0;left:0;width:100%;height:50px;z-index:1000}.navbar-logo{display:flex;align-items:center;color:white;text-decoration:none;font-size:var(--font-size-logo);transition:color var(--transition);z-index:1000}.logo-svg{width:72px;height:72px}@media(min-width:768px){.logo-svg{width:150px;height:150px}}.desktop-menu{display:flex;gap:30px;flex:1;justify-content:center;align-items:center}.desktop-menu li{position:relative}.desktop-menu li a{text-transform:uppercase;padding:5px;transition:0.3s;color:white}.desktop-menu li a:hover{font-weight:bold;text-decoration:underline}.desktop-menu .has-submenu:hover .submenu{display:flex;flex-direction:column}.desktop-menu .has-submenu .submenu{position:absolute;top:100%;left:0;background:black;border:1px solid white;display:none;min-width:220px;flex-direction:column;margin-top:10px}.submenu li{padding:10px}.submenu li a{text-transform:uppercase;color:white}.hire-btn{padding:10px 20px;border:1px solid white;color:white;cursor:pointer}.desktop-hire{display:block}.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:8px;width:30px;height:30px;cursor:pointer;position:relative;z-index:1001}.hamburger span{width:34px;height:1.8px;background:white;border-radius:2px;transform-origin:center;transition:transform 0.3s cubic-bezier(0.4,0,0.2,1),opacity 0.25s ease}.hamburger.active span:nth-child(1){transform:translateY(5px) rotateX(180deg) rotate(45deg)}.hamburger.active span:nth-child(2){transform:translateY(-5px) rotateX(180deg) rotate(-45deg)}.hamburger.active span{perspective:500px;box-shadow:0 0 5px rgba(0,0,0,0.25)}.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:black;flex-direction:column;justify-content:center;align-items:center;z-index:1000;transition:opacity 0.4s ease}.mobile-menu ul{display:flex;flex-direction:column;gap:20px;text-align:center}.mobile-submenu-items{display:none;flex-direction:column;margin-top:10px}.mobile-submenu-items li{margin:5px 0}@media(max-width:1024px){.desktop-menu,.desktop-hire{display:none}.hamburger{display:flex}}
-    .font-playfair { font-family: 'Playfair Display', serif; }
-    .font-dancing { font-family: 'Dancing Script', cursive; }
-    .font-opensans { font-family: 'Open Sans', sans-serif; }
-    .font-bbh { font-family: 'BBH Sans Bartle', sans-serif; }
-    body { scroll-padding-top: 40px; } /* to avoid content under header */
-  </style>
-</head>
-<body class="bg-white relative">
-
+<body>
   <!-- START NAVIGATION BAR -->
 <nav class="navbar">
   <!-- Logo --><a href="#" class="navbar-logo">
@@ -182,9 +176,14 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
 
         <div class="pt-6 sm:pt-10 px-2 sm:px-4 relative">
           <div class="bg-white p-2 sm:p-3 md:p-4 relative top-[5px] sm:top-[20px] md:top-[80px]">
-            <p class="italic text-gray-700 leading-relaxed font-poppins text-[0.9rem] sm:text-[1.5rem] md:text-[1.8rem]">
-              I believe beauty begins with balance — between mind, body, and skin. My mission is to inspire gentle rituals, conscious care, and confidence through simplicity.
-            </p>
+            <p class="italic text-gray-700 leading-relaxed font-poppins text-[0.9rem] sm:text-[1.5rem] md:text-[1.8rem]">When you come to know me, I’ll say only this:
+life began with a line.
+From it, words were born,
+and from words, stories rose —
+until the frames moved,
+and film became my silence.
+
+</p>
           </div>
         </div>
 
@@ -282,75 +281,92 @@ c0 -5 -13 -10 -29 -10 -16 0 -38 -3 -48 -7 -10 -3 -15 -3 -11 2 4 4 22 11 40
 
     <!-- Cover Image -->
     <div class="w-full h-64 sm:h-96 overflow-hidden rounded-xl shadow-lg mb-8">
-      <img src="https://via.placeholder.com/1200x600" alt="Cover Image" class="w-full h-full object-cover">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936288/1759317450607_edit_1428122759278814_tpbbah.jpg" alt="Cover Image" class="w-full h-full object-cover">
     </div>
 
-    <h1 class="text-5xl sm:text-6xl font-bold mb-4 font-bbh text-[#111]">About Me</h1>
-    <h2 class="text-3xl sm:text-4xl font-semibold mb-6" style="font-family: 'Revalia', serif; color:#333;">My Journey in Art & Life</h2>
+    <h2 class="text-5xl sm:text-6xl font-bold mb-4 font-bbh text-[#111]">About Me</h2>
+<h2 class="font-['Bebas Neue'] text-4xl sm:text-5xl lg:text-6xl mb-6" style="color:#333;">
+  My Journey in Art
+</h2>
 
-    <p class="text-gray-700 leading-relaxed mb-6 font-opensans font-thin">
-      Hi, I'm Muktadir, an artist, writer, actor, and designer. My inspiration comes from my loved ones and the beauty of everyday life. I enjoy creating things that speak to emotions and tell stories through colors, words, and movement.
+<p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+In the shadow of losing my parents, I found a flicker of life in art. 5th grade brought desperation, failed grades, and cruel laughs—but with stubborn hands, I drew my first comic characters. Each stroke felt like stepping into another world, and without knowing, I had fallen in love with art. The road was lonely, home offered no support, and harsh words followed me—but my aunt’s unwavering faith became my secret strength.
     </p>
+ <p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+I still remember the pain of being beaten for drawing while I tried to study, the heavy conditions placed on me just to score above 90. From fifth grade to higher secondary, I clung to the front row, desperate to hold onto my art, yet the world offered no support. Then, like a quiet light in the darkness, my teacher Roni Kumar Nath stepped in. With his belief in me, I discovered a new path—a way to nurture both my studies and my art, and finally, hope began to take root.
+</p>
+        <div class="w-full h-64 sm:h-96 overflow-hidden rounded-xl shadow-lg mb-8">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936288/1759318892822_huw8rq.jpg" alt="Cover Image" class="w-full h-full object-cover">
+    </div>
+    
+<p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+Amid the struggles, a quiet love bloomed in my life. She lifted me when I stumbled, reminded me to stay human, to keep moving. Without realizing, I fell for her—pure, unconscious, inevitable. She is my unwritten story: Umme Kulum Arifa. Yet, a shadow of doubt lingers—will her love remain, will she truly hold my hand forever? Still, in the trembling uncertainty, hope flickers, and I hold on to every fleeting moment with her.
+ </p>
+        <div class="w-full h-full sm:h-96 overflow-hidden rounded-xl shadow-lg mb-8">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936761/Photo0931_edit_2428693711355914_dyaack.jpg" alt="Cover Image" class="w-full h-full object-cover">
+    </div>
+    
+ <p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+   With my aunt’s support, I studied formally at Chittagong Shilpakala Academy, where Sadia Ma’am showed me new horizons. I’ve walked barefoot through streets, faced endless harassment, and been cheated—but I worked tirelessly, anywhere, anytime, for free. I’m not rich or famous yet, but I am a simple artist, writer, and filmmaker, fluent in stories even if budgets hold back my films. Teaching and creating are now my life. The system offers little support, so I push for change—and I ask you to join me in this fight, because giving up was never an option.
+ </p>
 
-    <h3 class="text-2xl sm:text-3xl font-black mb-4" style="font-family: 'Archivo Black', sans-serif; color:#222;">Early Life & Education</h3>
+    <h3 class="text-2xl sm:text-3xl font-black mb-4" style="font-family: 'Archivo Black', sans-serif; color:#222;">Education</h3>
     <p class="text-gray-700 leading-relaxed mb-6 font-opensans font-thin">
-      I studied science in school and college, but my passion for arts always led me to explore my creative side. My family and close mentors have guided and inspired me throughout my journey.
+I don’t waste time on long lectures. With my uncle’s guidance and my own grind, I scored GPA 4.86 in JSC, GPA 5 in SSC and 4.75 in HSC.
     </p>
 
     <blockquote class="border-l-4 border-gray-900 pl-6 italic text-gray-800 mb-6 shadow-md bg-white p-4 rounded-lg">
-      "Art enables us to find ourselves and lose ourselves at the same time." – Muktadir
+      "He who does not know how to think cannot be an artist." – Muktadir
     </blockquote>
 
     <h3 class="text-2xl sm:text-3xl font-black mb-4" style="font-family: 'Archivo Black', sans-serif; color:#222;">Inspirations</h3>
-    <p class="text-gray-700 leading-relaxed mb-6 font-opensans font-thin">
-      My biggest inspirations are my girlfriend Arifa and my aunt and uncle. Their support, love, and guidance fuel my creativity and push me to grow every day.
-    </p>
+ <p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+I’ve always been inspired by those wall painters—the ones who don’t get a proper education, who aren’t respected as artists, yet pour their hearts into every stroke. But the moment I stand in their shoes and try the work myself, I realize how challenging it really is. That’s when I understood something crucial: you don’t become an artist just by knowing how to draw. You have to carry art in your heart and pursue it through every circumstance.
+</p>
+  <p class="font-['Poppins'] font-thin text-base sm:text-[1.125rem] lg:text-[2rem] text-gray-700 leading-relaxed mb-6">
+When you do that, art returns to you in its purest form. Respect or recognition doesn’t matter at first—what matters is the pursuit, the passion. I don’t draw just for the sake of drawing; I draw because I love art. And the more I love it, the more I practice, the more it grows inside me. In that dedication, the respect and admiration come naturally. That’s my journey, my promise to myself, and my call to anyone who dares to chase their passion relentlessly.
+</p>
+    <h3 class="text-2xl sm:text-3xl font-black mb-4" style="font-family: 'Archivo Black', sans-serif; color:#222;">Inspiro ❤️‍🩹
+    </h3>
+    <!-- GLightbox CSS -->
+<link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-    <!-- Two Layout Images -->
-    <div class="grid grid-cols-2 gap-4 mb-6">
-      <img src="https://via.placeholder.com/400" alt="Layout Image 1" class="w-full h-48 object-cover rounded-lg shadow-lg">
-      <img src="https://via.placeholder.com/400" alt="Layout Image 2" class="w-full h-48 object-cover rounded-lg shadow-lg">
-    </div>
+<!-- Six Layout Images with Lightbox -->
+<div class="grid grid-cols-3 gap-4 mb-6">
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936287/IMG-20251003-WA0111_rvmlbi.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936287/IMG-20251003-WA0111_rvmlbi.jpg" alt="Image 1" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063402/vidma_recorder_13082021_165330_h8vbsb.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063402/vidma_recorder_13082021_165330_h8vbsb.jpg" alt="Image 2" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063403/IMG-20240610-WA0021_xnager.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063403/IMG-20240610-WA0021_xnager.jpg" alt="Image 3" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063404/IMG20230114163302_00_qeuzzz.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761063404/IMG20230114163302_00_qeuzzz.jpg" alt="Image 4" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761021128/exhibition/IMG_20241121_122823_i4mdmi.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761021128/exhibition/IMG_20241121_122823_i4mdmi.jpg" alt="Image 5" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+  <a href="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936761/Photo0931_edit_2428693711355914_dyaack.jpg" class="glightbox">
+    <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1760936761/Photo0931_edit_2428693711355914_dyaack.jpg" alt="Image 6" class="w-full object-cover rounded-lg shadow-lg">
+  </a>
+</div>
 
+<!-- GLightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({
+    selector: '.glightbox'
+  });
+</script>
+<h3 class="text-2xl sm:text-3xl font-black mb-4" style="font-family: 'Archivo Black', sans-serif; color:#222;">Recent Award
+    </h3>
     <!-- Post Image -->
     <div class="w-full h-64 sm:h-80 overflow-hidden rounded-lg shadow-lg mb-6">
-      <img src="https://via.placeholder.com/800x400" alt="Post Image" class="w-full h-full object-cover">
+      <img src="https://res.cloudinary.com/dxiwnqpja/image/upload/v1761021128/exhibition/IMG-20250822-WA0221_rsozgg.jpg" alt="Post Image" class="w-full h-full object-cover">
     </div>
 
-    <!-- Slider -->
-    <div class="relative w-full mb-10">
-      <div class="flex overflow-x-auto gap-4 scrollbar-hide" id="slider">
-        <img src="https://via.placeholder.com/300x200" alt="Slide 1" class="w-64 h-40 object-cover rounded-lg shadow-md flex-shrink-0">
-        <img src="https://via.placeholder.com/300x200" alt="Slide 2" class="w-64 h-40 object-cover rounded-lg shadow-md flex-shrink-0">
-        <img src="https://via.placeholder.com/300x200" alt="Slide 3" class="w-64 h-40 object-cover rounded-lg shadow-md flex-shrink-0">
-        <img src="https://via.placeholder.com/300x200" alt="Slide 4" class="w-64 h-40 object-cover rounded-lg shadow-md flex-shrink-0">
-      </div>
-      <!-- Controls -->
-      <button onclick="sliderScroll(-1)" class="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"><i class="fas fa-chevron-left"></i></button>
-      <button onclick="sliderScroll(1)" class="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"><i class="fas fa-chevron-right"></i></button>
-    </div>
-
-  </div>
-
-  <!-- === Footer === -->
-  <footer class="bg-gray-900 text-white py-8 mt-10">
-    <div class="max-w-5xl mx-auto text-center">
-      <p>&copy; 2025 Muktadir Shabab. All rights reserved.</p>
-      <p>Designed & Developed by Muktadir</p>
-      <div class="flex justify-center gap-4 mt-4 text-xl">
-        <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="hover:text-sky-400"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const slider = document.getElementById('slider');
-    function sliderScroll(direction) {
-      slider.scrollBy({ left: direction * 300, behavior: 'smooth' });
-    }
-  </script>
 <!-- External JS -->
 <script src="script.js"></script>
 </body>
