@@ -1,4 +1,37 @@
-  const images = [
+// nav bar start
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+const submenuToggle = document.querySelector('.submenu-toggle');
+const mobileSubmenuItems = document.querySelector('.mobile-submenu-items');
+
+// Toggle mobile menu
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Toggle submenu in mobile
+submenuToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  mobileSubmenuItems.style.display = mobileSubmenuItems.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Close mobile submenu and menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileSubmenuItems.contains(e.target) && !submenuToggle.contains(e.target)) {
+    mobileSubmenuItems.style.display = 'none';
+  }
+  if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    mobileMenu.style.display = 'none';
+    hamburger.classList.remove('active');
+  }
+});
+// nav end
+
+
+
+
+const images = [
    {src:"https://res.cloudinary.com/dxiwnqpja/image/upload/v1760967873/1759319282010_edit_1638614612593822_dimavh.jpg", category:"seascape", title:"", date:"2025-10-20"},
 {src:"https://res.cloudinary.com/dxiwnqpja/image/upload/v1760967874/1759985244005_edit_1822143639008454_b2krjw.jpg", category:"seascape", title:"", date:"2025-10-20"},
 {src:"https://res.cloudinary.com/dxiwnqpja/image/upload/v1760967875/1759317008840_edit_1427494412125469_qu33tv.jpg", category:"seascape", title:"", date:"2025-10-20"},
