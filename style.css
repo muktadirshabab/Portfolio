@@ -1,6 +1,6 @@
 /* === Body CSS Start === */
 body {
-  background: white;
+  background: linear-gradient(to bottom, black 20%, white 20%);
   color: #000;
   margin: 0;
   padding: 0;
